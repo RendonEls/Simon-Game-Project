@@ -104,17 +104,54 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   // Override the current require with this new one
   return newRequire;
-})({"../js/message.js":[function(require,module,exports) {
-module.exports = {
-  message: function message(messageText) {
-    console.log(messageText);
-  }
-};
-},{}],"../js/main.js":[function(require,module,exports) {
-var messages = require("./message");
+})({"../js/main.js":[function(require,module,exports) {
+var lights = document.querySelectorAll(".light");
+var startGame = document.getElementById("startButton");
+var restartGame = document.getElementById("restartButton");
+var playerSelection = [];
+var colorArray = ["red", "green", "blue", "yellow"];
+var turnCount = 0;
+var generatedColors = randomColor();
+startGame.addEventListener('click', playGame); //     setTimeout(() => {
+//         blue.style.background = "rgba(0,0,255,.7)"
+//     }, time)
 
-messages.message("hello from parcel!");
-},{"./message":"../js/message.js"}],"../../../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+function randomColor() {
+  var colorPattern = [];
+
+  for (i = 0; i < lights.length + turnCount; i++) {
+    var randomValue = Math.floor(Math.random() * lights.length);
+    colorPattern.push(lights[randomValue].id);
+  }
+
+  return colorPattern;
+}
+
+function findColor() {
+  //pulls out each color from generateColors array runs findLight()
+  for (i = 0; i < generatedColors.length; i++) {
+    lightUpColor(generatedColors[i]);
+  }
+}
+
+function lightUpColor(color) {
+  // passed in generatedColors[i]
+  for (i = 0; i < generatedColors.length; i++) {
+    if (color === lights[i].id) {
+      lights[i].style.background = color;
+    }
+  }
+} // function removeLightUp(){
+//     for(i=0; i<generatedColors.length; i++){
+//         if()
+//     }
+// }
+
+
+function playGame() {
+  findColor();
+}
+},{}],"../../../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -141,7 +178,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51619" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60906" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
