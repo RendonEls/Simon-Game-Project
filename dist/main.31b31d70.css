@@ -1,0 +1,41 @@
+body {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0;
+  background-color: #efefef;
+  border: solid black 1px;
+}
+
+.container {
+  height: 750px;
+  width: 700px;
+  border: solid black 1px;
+}
+.container .gameboard {
+  margin: 50px;
+  border: solid red 1px;
+}
+.container .greenLight {
+  border: solid black 1px;
+  height: 100px;
+  width: 100px;
+  background-color: green;
+}
+.container .redLight {
+  border: solid black 1px;
+  height: 100px;
+  width: 100px;
+  background-color: red;
+}
+.container .yellowLight {
+  border: solid black 1px;
+  height: 100px;
+  width: 100px;
+  background-color: yellow;
+}
+.container .blueLight {
+  border: solid black 1px;
+  height: 100px;
+  width: 100px;
+  background-color: blue;
+}
