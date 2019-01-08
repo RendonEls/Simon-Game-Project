@@ -1,41 +1,63 @@
 body {
-  display: flex;
-  justify-content: flex-end;
   margin: 0;
   background-color: #efefef;
   border: solid black 1px;
 }
 
+.headContainer {
+  display: flex;
+  justify-content: center;
+}
+
 .container {
+  display: flex;
+  justify-content: center;
   height: 750px;
-  width: 700px;
+  width: auto;
   border: solid black 1px;
 }
 .container .gameboard {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: minmax(100px, auto);
+  height: 500px;
+  width: 500px;
   margin: 50px;
   border: solid red 1px;
 }
 .container .greenLight {
   border: solid black 1px;
-  height: 100px;
-  width: 100px;
+  height: 150px;
+  width: 150px;
   background-color: green;
+  border-radius: 50%;
+  grid-column: 1/3;
+  grid-row: 2;
 }
 .container .redLight {
   border: solid black 1px;
-  height: 100px;
-  width: 100px;
+  height: 150px;
+  width: 150px;
   background-color: red;
+  border-radius: 50%;
+  grid-column: 2/3;
+  grid-row: 1;
 }
 .container .yellowLight {
   border: solid black 1px;
-  height: 100px;
-  width: 100px;
+  height: 150px;
+  width: 150px;
   background-color: yellow;
+  border-radius: 50%;
+  grid-column: 3/3;
+  grid-row: 2;
 }
 .container .blueLight {
   border: solid black 1px;
-  height: 100px;
-  width: 100px;
+  height: 150px;
+  width: 150px;
   background-color: blue;
+  border-radius: 50%;
+  grid-column: 2/3;
+  grid-row: 3;
 }
