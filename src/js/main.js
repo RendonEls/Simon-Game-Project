@@ -3,16 +3,13 @@
 const lights = document.querySelectorAll(".light")
 const startGame = document.getElementById("startButton")
 const restartGame = document.getElementById("restartButton")
-// let colorChage = document.querySelector()
 const playerSelection = []
 const colorArray = ["red", "green", "blue", "yellow"]
 let turnCount = 0
-const generatedColors = randomColor()
+const randomColorArray = randomColor() // array of randomcolors
 
 startGame.addEventListener('click', playGame)
-//     setTimeout(() => {
-//         blue.style.background = "rgba(0,0,255,.7)"
-//     }, time)
+
 
 function randomColor(){
     const colorPattern = []
@@ -23,35 +20,34 @@ function randomColor(){
     return colorPattern
 }
 
-// console.log(generatedColors)
 
 function findColor(){  //pulls out each color from generateColors array then passes it as an argument through lightUpColor()
-    for (i = 0; i < generatedColors.length; i++){
-        const currentColor = generatedColors[i]
+    for (i = 0; i < randomColorArray.length; i++){
+        const currentColor = randomColorArray[i]
+        // const revertColor = removeColor(currentColor)
         lightUpColor(currentColor)
-        removeColor(currentColor)
+        // setTimeout(revertColor, 2000)
     }
 }
 
-function lightUpColor(color) {           // passed in generatedColors[i]
-    for(i=0; i<generatedColors.length; i++){
+// console.log(randomColorArray)
+// console.log(lights[0].id)
+
+function lightUpColor(color) {           // passed in randomColorArray[i]
+    for(i=0; i<randomColorArray.length; i++){
         // console.log(color, lights[i].id)
-        // console.log("\x1b[33m%s\x1b[0m" , lights[i].id)
         if(color === lights[i].id){
-            lights[i].style.background = color
-            // console.log(lights[i].id)
+            console.log(color, lights[i].id)
+            console.log(lights[i])
+            lights[i].style.backgroundColor = color
         }
     }
 }
 function removeColor(color){
-    for(i=0; i<generatedColors.length; i++){
-        // console.log(lights[i].id)
-        // console.log('\x1b[36m%s\x1b[34m%s\x1b[0m', generatedColors[i])
-        // console.log(generatedColors[i])
-        // console.log(color)
-        console.log(color, lights[i].id)
+    for(i=0; i<randomColorArray.length; i++){
+
         if(color === lights[i].id){
-            console.log('test')
+
             lights[i].style.opacity = .3
         }
     }  
@@ -60,6 +56,5 @@ function removeColor(color){
 
 function playGame(){
     setTimeout(findColor, 1000)
-    setTimeout(removeColor, 2000)
 } 
 
