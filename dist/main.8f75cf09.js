@@ -173,6 +173,16 @@ function removeColor(color) {
     }
   }
 }
+
+divColorArray.forEach(function (color) {
+  return color.addEventListener('click', playerAttempt);
+});
+
+function playerAttempt(event) {
+  var playerClickInput = event.target.id;
+  playerSelection.push(playerClickInput);
+  console.log(playerSelection);
+}
 },{}],"../../../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';

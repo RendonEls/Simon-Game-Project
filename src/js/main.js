@@ -64,3 +64,10 @@ function removeColor(color) {
   }
 }
 
+divColorArray.forEach((color) => color.addEventListener('click', playerAttempt))
+
+function playerAttempt(event) {
+    let playerClickInput = event.target.id;
+    playerSelection.push(playerClickInput)
+    console.log(playerSelection)
+}
