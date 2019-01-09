@@ -116,6 +116,10 @@ var randomColorArray = makeRandomColor(); // array of randomcolors
 startGame.addEventListener("click", playGame);
 restartGame.addEventListener('click', restartListener);
 
+function restartListener() {
+  location.reload();
+}
+
 function playGame() {
   setTimeout(iterateRandomColors, 1000);
 }
