@@ -113,7 +113,8 @@ var availableColors = ["red", "green", "blue", "yellow"];
 var turnCount = 0;
 var randomColorArray = makeRandomColor(); // array of randomcolors
 
-startGame.addEventListener('click', playGame);
+startGame.addEventListener("click", playGame);
+restartGame.addEventListener('click', restartListener);
 
 function playGame() {
   setTimeout(iterateRandomColors, 1000);
@@ -140,12 +141,7 @@ function iterateRandomColors() {
     removeColorTimer(currentColor, delay);
     delay += 1000;
   }
-} // for each color
-// light it up for 1 second
-// then remove lightup
-// then increase the delay of the next lightup
-// then do next color
-
+}
 
 function addColorTimer(color, delay) {
   var addlightTimer = setTimeout(function () {
@@ -156,26 +152,23 @@ function addColorTimer(color, delay) {
 function removeColorTimer(color, delay) {
   var removeLightTimer = setTimeout(function () {
     removeColor(color);
-  }, delay + 1000);
+  }, delay + 900);
 }
 
 function addColor(color) {
   var element = document.getElementById(color);
-  element.style.backgroundColor = color;
-  console.log;
+  element.classList.add("shade");
 }
 
 function removeColor(color) {
   //need to add a timer to this
   for (i = 0; i < randomColorArray.length; i++) {
     if (color === divColorArray[i].id) {
-      divColorArray[i].style.opacity = .3;
+      divColorArray[i].classList.remove("shade");
       console.log(divColorArray[i], color);
     }
   }
-} //currently opacity is .3
-//adds solid color over rgba
-//adds opacity as a seperate style //blocks repeat solid
+}
 },{}],"../../../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
