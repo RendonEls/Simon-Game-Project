@@ -22,39 +22,53 @@ function randomColor(){
 
 
 function findColor(){  //pulls out each color from generateColors array then passes it as an argument through lightUpColor()
+    let delay = 1000
+    
     for (i = 0; i < randomColorArray.length; i++){
         const currentColor = randomColorArray[i]
-        // const revertColor = removeColor(currentColor)
-        lightUpColor(currentColor)
-        // setTimeout(revertColor, 2000)
+        doTimer(currentColor, delay)
+        delay += 1000
     }
 }
 
 // console.log(randomColorArray)
 // console.log(lights[0].id)
 
-function lightUpColor(color) {           // passed in randomColorArray[i]
+// for each color
+// light it up for 1 second
+// then remove lightup
+// then increase the delay of the next lightup
+// then do next color
+
+function doTimer(color, delay) {
+    // set timeout
+    const timer = setTimeout(() => {
+        lightUpColor(color)
+    }, delay)
+
+    // delay = 1000
+    // next timer starts at 2000
+
+
+    // removeColor(color)
+
+}
+
+function lightUpColor(color) {
+        const element = document.getElementById(color)
+        element.style.backgroundColor = color
+}
+
+function removeColor(color){    //need to add a timer to this
     for(i=0; i<randomColorArray.length; i++){
-        // console.log(color, lights[i].id)
         if(color === lights[i].id){
-            console.log(color, lights[i].id)
-            console.log(lights[i])
-            lights[i].style.backgroundColor = color
+                console.log(lights[i].id) 
+            }
         }
     }
-}
-function removeColor(color){
-    for(i=0; i<randomColorArray.length; i++){
 
-        if(color === lights[i].id){
-
-            lights[i].style.opacity = .3
-        }
-    }  
-}
 
 
 function playGame(){
     setTimeout(findColor, 1000)
 } 
-
