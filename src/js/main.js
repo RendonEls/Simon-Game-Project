@@ -3,7 +3,7 @@
 const lights = document.querySelectorAll(".light")
 const startGame = document.getElementById("startButton")
 const restartGame = document.getElementById("restartButton")
-
+// let colorChage = document.querySelector()
 const playerSelection = []
 const colorArray = ["red", "green", "blue", "yellow"]
 let turnCount = 0
@@ -23,10 +23,15 @@ function randomColor(){
     return colorPattern
 }
 
+// console.log(generatedColors)
 
-function findColor(){  //pulls out each color from generateColors array runs findLight()
+function findColor(){  //pulls out each color from generateColors array then passes it as an argument through lightUpColor()
     for (i = 0; i < generatedColors.length; i++){
         lightUpColor(generatedColors[i])
+        removeColor(generatedColors[i])
+        // setTimeout(function(){
+        //     removeColor(generatedColors[i])}, 1500)
+            // console.log(generatedColors[i])
     }
 }
 
@@ -34,15 +39,25 @@ function lightUpColor(color) {           // passed in generatedColors[i]
     for(i=0; i<generatedColors.length; i++){
         if(color === lights[i].id){
             lights[i].style.background = color
+            console.log(lights[i].id)
         }
     }
 }
-// function removeLightUp(){
-//     for(i=0; i<generatedColors.length; i++){
-//         if()
-//     }
-// }
+function removeColor(color){
+    for(i=0; i<generatedColors.length; i++){
+        console.log(lights[i].id)
+        console.log(generatedColors)
+        // console.log(generatedColors[i])
+        if(color === lights[i].id){
+            lights[i].style.opacity = .3
+        }
+    }  
+}
+
 
 function playGame(){
+    setTimeout(findColor, 1000)
+    setTimeout(removeColor, 2000)
     findColor()
-}
+} 
+
