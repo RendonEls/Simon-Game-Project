@@ -35,6 +35,7 @@ function iterateRandomColors() {
     removeColorTimer(currentColor, delay);
     delay += 1000;
   }
+//   checkPlayerSelection()
 }
 
 function addColorTimer(color, delay) {
@@ -66,8 +67,22 @@ function removeColor(color) {
 
 divColorArray.forEach((color) => color.addEventListener('click', playerAttempt))
 
+let playerClickInput
+
 function playerAttempt(event) {
-    let playerClickInput = event.target.id;
+    playerClickInput = event.target.id;
     playerSelection.push(playerClickInput)
     console.log(playerSelection)
 }
+
+
+function checkPlayerSelection(){
+    for (let i = 0; divColorArray.length + turnCount; i++){
+        if (playerSelection[i] === randomColorArray[i]){
+            alert("Great job")
+        }
+    }
+}
+// checkPlayerSelection()
+console.log(randomColorArray)
+// console.log(playerClickInput)
