@@ -121,7 +121,6 @@ function restartListener() {
 
 function playGame() {
   makeRandomColor();
-  console.log(colorPattern);
   setTimeout(iterateRandomColors, 1000);
 }
 
@@ -138,14 +137,12 @@ function makeRandomColor() {
     console.log("hi else");
     var randomNumber = Math.floor(Math.random() * divColorArray.length);
     colorPattern.push(divColorArray[randomNumber].id);
-    console.log(colorPattern);
   }
 
   return colorPattern;
 }
 
 function iterateRandomColors() {
-  //calls functiosn to add and remove color
   var delay = 1000;
 
   for (i = 0; i < colorPattern.length; i++) {

@@ -15,29 +15,26 @@ function restartListener() {
 }
 function playGame() {
   makeRandomColor();
-  console.log(colorPattern);
   setTimeout(iterateRandomColors, 1000);
 }
 
 function makeRandomColor() {
   if (currentLevel === 1) {
-        console.log("hi");
-        colorPattern = [];
-        for (i = 0; i < divColorArray.length; i++) {
-            let randomValue = Math.floor(Math.random() * divColorArray.length);
-            colorPattern.push(divColorArray[randomValue].id);
-        }
-    } else {
-            console.log("hi else");
-            let randomNumber = Math.floor(Math.random() * divColorArray.length);
-            colorPattern.push(divColorArray[randomNumber].id);
-            console.log(colorPattern);
-        }
+    console.log("hi");
+    colorPattern = [];
+    for (i = 0; i < divColorArray.length; i++) {
+      let randomValue = Math.floor(Math.random() * divColorArray.length);
+      colorPattern.push(divColorArray[randomValue].id);
+    }
+  } else {
+    console.log("hi else");
+    let randomNumber = Math.floor(Math.random() * divColorArray.length);
+    colorPattern.push(divColorArray[randomNumber].id);
+  }
   return colorPattern;
 }
 
 function iterateRandomColors() {
-  //calls functiosn to add and remove color
   let delay = 1000;
   for (i = 0; i < colorPattern.length; i++) {
     const currentColor = colorPattern[i];
@@ -61,17 +58,17 @@ function removeColorTimer(color, delay) {
 }
 
 function addColor(color) {
-const element = document.getElementById(color);
-element.classList.add("shade");
+  const element = document.getElementById(color);
+  element.classList.add("shade");
 }
 
 function removeColor(color) {
-for (i = 0; i < divColorArray.length; i++) {
+  for (i = 0; i < divColorArray.length; i++) {
     if (color === divColorArray[i].id) {
-    divColorArray[i].classList.remove("shade");
-    console.log(divColorArray[i].id);
+      divColorArray[i].classList.remove("shade");
+      console.log(divColorArray[i].id);
     }
-}
+  }
 }
 
 divColorArray.forEach(color => color.addEventListener("click", playerAttempt));
@@ -97,8 +94,8 @@ function checkWinSelectionLength() {
     console.log("move to the next level");
     currentLevel++;
     console.log(currentLevel);
-    playerSelection = []
-    clickCount = 0
+    playerSelection = [];
+    clickCount = 0;
     playGame();
   }
 }
