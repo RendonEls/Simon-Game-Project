@@ -4,7 +4,10 @@ const restartGame = document.getElementById("restartButton");
 const playerSelection = [];
 const availableColors = ["red", "green", "blue", "yellow"];
 let turnCount = 0;
+let clickCount = 0;
 const randomColorArray = makeRandomColor(); // array of randomcolors
+
+console.log(playerSelection)
 
 startGame.addEventListener("click", playGame);
 restartGame.addEventListener('click', restartListener)
@@ -73,16 +76,19 @@ function playerAttempt(event) {
     playerClickInput = event.target.id;
     playerSelection.push(playerClickInput)
     console.log(playerSelection)
+    checkPlayerSelection()
 }
 
 
 function checkPlayerSelection(){
-    for (let i = 0; divColorArray.length + turnCount; i++){
+    for (let i = 0; i < playerSelection.length + turnCount; i++){
+        console.log(playerSelection[i], randomColorArray[i])
         if (playerSelection[i] === randomColorArray[i]){
-            alert("Great job")
+            clickCount+=1
+        } else{ alert("try again")
         }
     }
 }
-// checkPlayerSelection()
-console.log(randomColorArray)
+
+// console.log(randomColorArray)
 // console.log(playerClickInput)
