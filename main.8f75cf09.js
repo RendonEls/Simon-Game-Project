@@ -111,8 +111,10 @@ var restartGame = document.getElementById("restartButton");
 var playerSelection = [];
 var availableColors = ["red", "green", "blue", "yellow"];
 var turnCount = 0;
+var clickCount = 0;
 var randomColorArray = makeRandomColor(); // array of randomcolors
 
+console.log(playerSelection);
 startGame.addEventListener("click", playGame);
 restartGame.addEventListener('click', restartListener);
 
@@ -184,18 +186,21 @@ function playerAttempt(event) {
   playerClickInput = event.target.id;
   playerSelection.push(playerClickInput);
   console.log(playerSelection);
+  checkPlayerSelection();
 }
 
 function checkPlayerSelection() {
-  for (var _i = 0; divColorArray.length + turnCount; _i++) {
+  for (var _i = 0; _i < playerSelection.length + turnCount; _i++) {
+    console.log(playerSelection[_i], randomColorArray[_i]);
+
     if (playerSelection[_i] === randomColorArray[_i]) {
-      alert("Great job");
+      clickCount += 1;
+    } else {
+      alert("try again");
     }
   }
-} // checkPlayerSelection()
-
-
-console.log(randomColorArray); // console.log(playerClickInput)
+} // console.log(randomColorArray)
+// console.log(playerClickInput)
 },{}],"../../../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -223,7 +228,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58290" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63300" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
