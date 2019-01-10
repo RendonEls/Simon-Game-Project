@@ -1,12 +1,15 @@
 body {
   margin: 0;
-  background-color: #efefef;
-  border: solid black 1px;
+  background-image: url("wallpaper.90dedb68.jpg");
+  background-size: cover;
+  background-color: grey;
 }
 
 .headContainer {
   display: flex;
   justify-content: center;
+  font-family: "Bungee Inline", cursive;
+  font-size: 50px;
 }
 
 .container {
@@ -14,16 +17,25 @@ body {
   justify-content: center;
   align-items: center;
   height: 750px;
-  width: auto;
-  border: solid black 1px;
+  width: 100%;
 }
 .container .gameboard {
+  float: right;
   display: grid;
   grid-template-columns: repeat(3, 150px);
   grid-template-rows: repeat(3, 150px);
   height: 500px;
   width: 500px;
   margin: 50px;
+}
+.container .levelContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Bungee Inline", cursive;
+  font-display: 30px;
+  grid-column: 2/3;
+  grid-row: 2;
 }
 .container .greenLight {
   height: 150px;
@@ -61,22 +73,60 @@ body {
   grid-column: 2/3;
   grid-row: 3;
 }
-
-.buttonContainer {
+.container .buttonContainer {
   display: flex;
   justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  text-align: center;
 }
-.buttonContainer #startButton {
-  margin-right: 50px;
+.container .buttonContainer #restartButton {
+  margin-top: 20px;
 }
 
-.buttons {
+button {
   display: flex;
   justify-content: center;
+  font-family: "Bungee Inline", cursive;
+  font-size: 40px;
+  padding: 10px;
+  margin-right: 100px;
   align-items: center;
+  background-image: linear-gradient(to bottom, #eb94d0, #2079b0);
 }
 
 .shade {
   opacity: 1 !important;
+  border-color: whitesmoke;
+  box-shadow: 0 0 10rem whitesmoke;
+}
+
+.greenLight:hover {
+  opacity: 1;
+  border-color: whitesmoke;
+  box-shadow: 0 0 10rem whitesmoke;
+}
+
+.redLight:hover {
+  opacity: 1;
+  border-color: whitesmoke;
+  box-shadow: 0 0 10rem whitesmoke;
+}
+
+.yellowLight:hover {
+  opacity: 1;
+  border-color: whitesmoke;
+  box-shadow: 0 0 10rem whitesmoke;
+}
+
+.blueLight:hover {
+  opacity: 1;
+  border-color: whitesmoke;
+  box-shadow: 0 0 10rem whitesmoke;
+}
+
+button:hover {
+  border: 1px solid blue;
+  color: blue;
+  border-color: whitesmoke;
+  box-shadow: 0 0 10rem whitesmoke;
 }

@@ -5,7 +5,7 @@ const restartGame = document.getElementById("restartButton");
 let playerSelection = [];
 let currentLevel = 1;
 let clickCount = 0;
-let colorPattern = [];
+let randomColorPattern = [];
 
 startGame.addEventListener("click", playGame);
 restartGame.addEventListener("click", restartListener);
@@ -13,6 +13,7 @@ restartGame.addEventListener("click", restartListener);
 function restartListener() {
   location.reload();
 }
+
 function playGame() {
   makeRandomColor();
   setTimeout(iterateRandomColors, 1000);
@@ -20,29 +21,28 @@ function playGame() {
 
 function makeRandomColor() {
   if (currentLevel === 1) {
-    console.log("hi");
-    colorPattern = [];
+    console.log("First level");
+    randomColorPattern = [];
     for (i = 0; i < divColorArray.length; i++) {
       let randomValue = Math.floor(Math.random() * divColorArray.length);
-      colorPattern.push(divColorArray[randomValue].id);
+      randomColorPattern.push(divColorArray[randomValue].id);
     }
   } else {
-    console.log("hi else");
+    console.log("else loop");
     let randomNumber = Math.floor(Math.random() * divColorArray.length);
-    colorPattern.push(divColorArray[randomNumber].id);
+    randomColorPattern.push(divColorArray[randomNumber].id);
   }
-  return colorPattern;
+  return randomColorPattern;
 }
 
 function iterateRandomColors() {
   let delay = 1000;
-  for (i = 0; i < colorPattern.length; i++) {
-    const currentColor = colorPattern[i];
+  for (i = 0; i < randomColorPattern.length; i++) {
+    const currentColor = randomColorPattern[i];
     addColorTimer(currentColor, delay);
     removeColorTimer(currentColor, delay);
     delay += 1000;
   }
-  //   checkPlayerSelection()
 }
 
 function addColorTimer(color, delay) {
@@ -71,9 +71,9 @@ function removeColor(color) {
   }
 }
 
-divColorArray.forEach(color => color.addEventListener("click", playerAttempt));
+divColorArray.forEach(color => color.addEventListener("click", playerClickInput));
 
-function playerAttempt(event) {
+function playerClickInput(event) {
   playerClickInput = event.target.id;
   playerSelection.push(playerClickInput);
   console.log(playerSelection);
@@ -81,17 +81,19 @@ function playerAttempt(event) {
 }
 
 function checkPlayerSelection() {
-  if (playerSelection[clickCount] === colorPattern[clickCount]) {
+  if (playerSelection[clickCount] === randomColorPattern[clickCount]) {
     clickCount += 1;
     checkWinSelectionLength();
   } else {
     alert("try again");
+    //function to add text to game board 
   }
 }
 
 function checkWinSelectionLength() {
-  if (clickCount === colorPattern.length) {
+  if (clickCount === randomColorPattern.length) {
     console.log("move to the next level");
+    //call function that adds level to gameboard
     currentLevel++;
     console.log(currentLevel);
     playerSelection = [];
@@ -100,3 +102,6 @@ function checkWinSelectionLength() {
   }
 }
 console.log(currentLevel);
+
+
+//function that adds level to gameboard

@@ -1,10 +1,12 @@
 div.container
+    div.buttonContainer
+        button.startGame#startButton Start Game
+        button.restart#restartButton Restart
     div.gameboard
         div.greenLight(id= "green").light     
         div.redLight(id= "red").light            
         div.yellowLight(id= "yellow").light
         div.blueLight(id= "blue").light
-    div.buttonContainer
-        button.startGame#startButton Start Game
-        button.restart#restartButton Restart
-div.buttons
+        div.levelContainer
+            p.level level:
+            //- p(class="levelNumber")#

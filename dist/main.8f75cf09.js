@@ -111,7 +111,7 @@ var restartGame = document.getElementById("restartButton");
 var playerSelection = [];
 var currentLevel = 1;
 var clickCount = 0;
-var colorPattern = [];
+var randomColorPattern = [];
 startGame.addEventListener("click", playGame);
 restartGame.addEventListener("click", restartListener);
 
@@ -126,32 +126,31 @@ function playGame() {
 
 function makeRandomColor() {
   if (currentLevel === 1) {
-    console.log("hi");
-    colorPattern = [];
+    console.log("First level");
+    randomColorPattern = [];
 
     for (i = 0; i < divColorArray.length; i++) {
       var randomValue = Math.floor(Math.random() * divColorArray.length);
-      colorPattern.push(divColorArray[randomValue].id);
+      randomColorPattern.push(divColorArray[randomValue].id);
     }
   } else {
-    console.log("hi else");
+    console.log("else loop");
     var randomNumber = Math.floor(Math.random() * divColorArray.length);
-    colorPattern.push(divColorArray[randomNumber].id);
+    randomColorPattern.push(divColorArray[randomNumber].id);
   }
 
-  return colorPattern;
+  return randomColorPattern;
 }
 
 function iterateRandomColors() {
   var delay = 1000;
 
-  for (i = 0; i < colorPattern.length; i++) {
-    var currentColor = colorPattern[i];
+  for (i = 0; i < randomColorPattern.length; i++) {
+    var currentColor = randomColorPattern[i];
     addColorTimer(currentColor, delay);
     removeColorTimer(currentColor, delay);
     delay += 1000;
-  } //   checkPlayerSelection()
-
+  }
 }
 
 function addColorTimer(color, delay) {
@@ -181,10 +180,10 @@ function removeColor(color) {
 }
 
 divColorArray.forEach(function (color) {
-  return color.addEventListener("click", playerAttempt);
+  return color.addEventListener("click", playerClickInput);
 });
 
-function playerAttempt(event) {
+function playerClickInput(event) {
   playerClickInput = event.target.id;
   playerSelection.push(playerClickInput);
   console.log(playerSelection);
@@ -192,17 +191,18 @@ function playerAttempt(event) {
 }
 
 function checkPlayerSelection() {
-  if (playerSelection[clickCount] === colorPattern[clickCount]) {
+  if (playerSelection[clickCount] === randomColorPattern[clickCount]) {
     clickCount += 1;
     checkWinSelectionLength();
   } else {
-    alert("try again");
+    alert("try again"); //function to add text to game board 
   }
 }
 
 function checkWinSelectionLength() {
-  if (clickCount === colorPattern.length) {
-    console.log("move to the next level");
+  if (clickCount === randomColorPattern.length) {
+    console.log("move to the next level"); //call function that adds level to gameboard
+
     currentLevel++;
     console.log(currentLevel);
     playerSelection = [];
@@ -211,7 +211,7 @@ function checkWinSelectionLength() {
   }
 }
 
-console.log(currentLevel);
+console.log(currentLevel); //function that adds level to gameboard
 },{}],"../../../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -239,7 +239,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64227" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49188" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
