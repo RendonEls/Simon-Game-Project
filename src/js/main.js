@@ -81,14 +81,9 @@ function playerAttempt(event) {
 
 
 function checkPlayerSelection(){
-    for (let i = 0; i < playerSelection.length + turnCount; i++){
-        console.log(playerSelection[i], randomColorArray[i])
-        if (playerSelection[i] === randomColorArray[i]){
+        if (playerSelection[clickCount] === randomColorArray[clickCount]){
+            console.log(clickCount)
             clickCount+=1
         } else{ alert("try again")
-        }
     }
 }
-
-// console.log(randomColorArray)
-// console.log(playerClickInput)
