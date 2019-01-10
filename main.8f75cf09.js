@@ -144,7 +144,8 @@ function iterateRandomColors() {
     addColorTimer(currentColor, delay);
     removeColorTimer(currentColor, delay);
     delay += 1000;
-  }
+  } //   checkPlayerSelection()
+
 }
 
 function addColorTimer(color, delay) {
@@ -177,12 +178,24 @@ function removeColor(color) {
 divColorArray.forEach(function (color) {
   return color.addEventListener('click', playerAttempt);
 });
+var playerClickInput;
 
 function playerAttempt(event) {
-  var playerClickInput = event.target.id;
+  playerClickInput = event.target.id;
   playerSelection.push(playerClickInput);
   console.log(playerSelection);
 }
+
+function checkPlayerSelection() {
+  for (var _i = 0; divColorArray.length + turnCount; _i++) {
+    if (playerSelection[_i] === randomColorArray[_i]) {
+      alert("Great job");
+    }
+  }
+} // checkPlayerSelection()
+
+
+console.log(randomColorArray); // console.log(playerClickInput)
 },{}],"../../../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -210,7 +223,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54964" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58290" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
