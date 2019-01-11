@@ -2,6 +2,7 @@ body {
   margin: 0;
   background-image: url("wallpaper.90dedb68.jpg");
   background-size: cover;
+  background-repeat: no-repeat;
   background-color: grey;
 }
 
