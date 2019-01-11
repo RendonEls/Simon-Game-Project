@@ -176,7 +176,7 @@ var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"./../images/darkerblueBackground.jpg":[["darkerblueBackground.5aab35d1.jpg","../images/darkerblueBackground.jpg"],"../images/darkerblueBackground.jpg"],"_css_loader":"../../../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../../../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"./../images/darkerblueBackground.jpg":[["darkerblueBackground.5aab35d1.jpg","../images/darkerblueBackground.jpg"],"../images/darkerblueBackground.jpg"],"./../images/ScreenShot.png":[["ScreenShot.ecfe0d51.png","../images/ScreenShot.png"],"../images/ScreenShot.png"],"_css_loader":"../../../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../../../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
