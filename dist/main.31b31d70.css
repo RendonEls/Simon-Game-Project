@@ -17,7 +17,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 650px;
+  height: px;
   width: 100%;
 }
 .container .gameboard {
