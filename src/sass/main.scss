@@ -1,7 +1,7 @@
 body {
   margin: 0;
   background-image: url("../images/darkerblueBackground.jpg");
-  background-size: cover;
+  background-size: auto;
   background-repeat: no-repeat;
   background-color: grey;
 }
@@ -10,6 +10,13 @@ body {
   justify-content: center;
   font-family: 'Bungee Inline', cursive;
   font-size: 50px;
+}
+.instructionsContainer{
+    display: flex;
+    justify-content: center;
+    font-family: 'Bungee Inline', cursive;
+    font-size: 30px;
+    margin-top: -25px;
 }
 .container {
   display: flex;

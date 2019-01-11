@@ -16,6 +16,7 @@ function restartListener() {
 
 function playGame() {
   makeRandomColor();
+  document.getElementById("instructions").innerHTML = "Match the pattern!"
   setTimeout(iterateRandomColors, 1000);
 }
 
@@ -85,7 +86,7 @@ function checkPlayerSelection() {
     clickCount += 1;
     checkWinSelectionLength();
   } else {
-    alert("try again");
+    document.getElementById("instructions").innerHTML = "Try Again";
     //function to add text to game board 
   }
 }
