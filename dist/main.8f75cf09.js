@@ -208,10 +208,15 @@ function checkWinSelectionLength() {
     playerSelection = [];
     clickCount = 0;
     playGame();
+    updateLevel();
   }
 }
 
-console.log(currentLevel); //function that adds level to gameboard
+console.log(currentLevel);
+
+function updateLevel() {
+  document.getElementById("currentLevel").innerHTML = currentLevel;
+} //function that adds level to gameboard
 },{}],"../../../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';

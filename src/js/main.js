@@ -99,9 +99,13 @@ function checkWinSelectionLength() {
     playerSelection = [];
     clickCount = 0;
     playGame();
+    updateLevel();
   }
 }
 console.log(currentLevel);
 
+function updateLevel(){
+  document.getElementById("currentLevel").innerHTML = currentLevel;
+}
 
 //function that adds level to gameboard
