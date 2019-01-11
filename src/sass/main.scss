@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  background-image: url("../images/wallpaper.jpg");
+  background-image: url("../images/darkerblueBackground.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-color: grey;
@@ -15,7 +15,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 750px;
+  height: 650px;
   width: 100%;
 
   .gameboard {
@@ -79,8 +79,8 @@ body {
       flex-direction: column;
       text-align: center;
 
-      #restartButton {
-          margin-top: 20px;
+      #startButton {
+          margin-bottom: 60px;
       }
   }
 }
@@ -88,7 +88,7 @@ button {
   display: flex;
   justify-content: center;
   font-family: 'Bungee Inline', cursive;
-  font-size: 40px;
+  font-size: 30px;
   padding: 10px;
   margin-right: 100px;
 
